@@ -45,7 +45,7 @@ def change_ip(file_path, bkp_dir, new_ip):
     with open(file_path, 'r') as file:
         lines = file.readlines()
     logging.info('substitute %s ...' % file_path)
-    pattern = '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+    pattern = '((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)'
     with open(file_path, 'w') as file:
         for line in lines:
             matchObj = re.search(pattern, line, re.M | re.I)
@@ -59,7 +59,7 @@ def change_ip(file_path, bkp_dir, new_ip):
 def UpdateINI(config_file_path, bkp_dir, new_ip):
     def set_and_print_cfg_value(section, option):
         old_value = cfg.get(section, option)
-        pattern = '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+        pattern = '((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)'
         matchObj = re.search(pattern, old_value, re.M | re.I)
         if matchObj:
             logging.info('old value: [%s]\t%s=%s', section, option, old_value)
