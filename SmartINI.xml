@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Product name="Wechat" Version="12.0">
+	<File Path="E:\Code\PyCharm_\SmartINI\ofc.ini">
+	    <AddKey>INI_SERVER_SECTION,CheckDuplicateMachineName,0</AddKey>
+		<UpdateKey>INI_SERVER_SECTION,CheckDigitalSignatureForHotfix,0</UpdateKey>
+	</File>
+</Product>
